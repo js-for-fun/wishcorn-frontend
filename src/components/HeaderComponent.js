@@ -2,31 +2,33 @@
 
 import React from 'react';
 // import { Button } from 'react-bootstrap';
-import { NavDropdown, Nav, NavItem, MenuItem } from 'react-bootstrap';
+import {Nav, NavItem} from 'react-bootstrap';
+import {LinkContainer} from 'react-router-bootstrap';
+
+// import {LinkContainer} from 'react-router';
 
 require('styles/Header.scss');
 
 class HeaderComponent extends React.Component {
-    handleSelect(eventKey) {
-        event.preventDefault();
-        alert(`selected ${eventKey}`);
+    handleSelect() {
+        // event.preventDefault();
     }
     render() {
         return (
-          <div className="header-component">
-              <Nav bsStyle="tabs" activeKey={1} onSelect={this.handleSelect}>
-              <NavItem eventKey={1} href="/home">NavItem 1 content</NavItem>
-              <NavItem eventKey={2} title="Item">NavItem 2 content</NavItem>
-              <NavItem eventKey={3} disabled>NavItem 3 content</NavItem>
-              <NavDropdown eventKey={4} title="Dropdown" id="nav-dropdown">
-                <MenuItem eventKey="4.1">Action</MenuItem>
-                <MenuItem eventKey="4.2">Another action</MenuItem>
-                <MenuItem eventKey="4.3">Something else here</MenuItem>
-                <MenuItem divider />
-                <MenuItem eventKey="4.4">Separated link</MenuItem>
-              </NavDropdown>
-            </Nav>
-          </div>
+            <div className="header-component">
+                <Nav bsStyle="tabs" activeKey={1} onSelect={this.handleSelect}>
+                    <LinkContainer to="/list">
+                        <NavItem eventKey={1}>
+                            Corn List
+                        </NavItem>
+                    </LinkContainer>
+                    <LinkContainer to="/show">
+                        <NavItem eventKey={2}>
+                            Show Corn
+                        </NavItem>
+                    </LinkContainer>
+                </Nav>
+            </div>
         );
     }
 }

@@ -2,7 +2,8 @@ import 'core-js/fn/object/assign';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/Main';
-import CornComponent from './components/CornComponent';
+import CornListComponent from './components/CornListComponent';
+import ShowComponent from './components/ShowComponent';
 
 import { Router, Route, browserHistory } from 'react-router';
 
@@ -12,7 +13,8 @@ import { Router, Route, browserHistory } from 'react-router';
 ReactDOM.render(
     (<Router history={browserHistory}>
         <Route path="/" component={App}>
-          <Route path="corn" component={CornComponent}/>
+          <Route path="list" component={CornListComponent}/>
+          <Route path="show" component={ShowComponent}/>
           {/*<Route path="users" component={Users}>
             <Route path="/user/:userId" component={User}/>
           </Route>
