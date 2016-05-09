@@ -2,17 +2,25 @@
 
 import React from 'react';
 
+import { Button } from 'react-bootstrap';
+
 require('styles/Corn.scss');
 
 class CornComponent extends React.Component {
   render() {
     return (
       <div className="corn-component">
-          Please edit src/components/CornComponent.js to update this component!
+          <Button>YES</Button>
+          <Button>NO</Button>
       </div>
     );
   }
+  onYes() {
+
+  }
 }
+
+
 
 CornComponent.displayName = 'CornComponent';
 
